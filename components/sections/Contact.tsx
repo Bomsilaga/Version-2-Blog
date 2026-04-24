@@ -9,6 +9,9 @@ import { Mail, Phone, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { siteContent } from "@/content/site";
+
+const { contact: contactInfo } = siteContent;
 
 const contactSchema = z.object({
   name: z.string().min(2, "Please enter your full name"),
@@ -95,30 +98,26 @@ export default function Contact() {
             </p>
 
             <div className="space-y-6">
-              <a
-                href="tel:+61000000000"
-                className="flex items-center gap-4 group"
-                aria-label="Call us"
-              >
-                <div className="w-10 h-10 rounded-sm bg-cream-dark flex items-center justify-center group-hover:bg-terracotta/10 transition-colors">
-                  <Phone
-                    size={16}
-                    className="text-terracotta"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div>
-                  <p className="font-sans text-xs text-warm-muted uppercase tracking-wider mb-0.5">
-                    Phone
-                  </p>
-                  <p className="font-sans text-sm font-medium text-charcoal group-hover:text-terracotta transition-colors">
-                    [Add phone number]
-                  </p>
-                </div>
-              </a>
+              {contactInfo.phone && (
+                <a
+                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                  className="flex items-center gap-4 group"
+                  aria-label="Call us"
+                >
+                  <div className="w-10 h-10 rounded-sm bg-cream-dark flex items-center justify-center group-hover:bg-terracotta/10 transition-colors">
+                    <Phone size={16} className="text-terracotta" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="font-sans text-xs text-warm-muted uppercase tracking-wider mb-0.5">Phone</p>
+                    <p className="font-sans text-sm font-medium text-charcoal group-hover:text-terracotta transition-colors">
+                      {contactInfo.phone}
+                    </p>
+                  </div>
+                </a>
+              )}
 
               <a
-                href="mailto:info@ongroundpm.com.au"
+                href={`mailto:${contactInfo.email}`}
                 className="flex items-center gap-4 group"
                 aria-label="Email us"
               >
@@ -134,7 +133,7 @@ export default function Contact() {
                     Email
                   </p>
                   <p className="font-sans text-sm font-medium text-charcoal group-hover:text-terracotta transition-colors">
-                    info@ongroundpm.com.au
+                    {contactInfo.email}
                   </p>
                 </div>
               </a>
@@ -173,10 +172,10 @@ export default function Contact() {
                     within one business day. In the meantime, feel free to
                     send any drawings or project documents to{" "}
                     <a
-                      href="mailto:info@ongroundpm.com.au"
+                      href={`mailto:${contactInfo.email}`}
                       className="text-terracotta hover:underline"
                     >
-                      info@ongroundpm.com.au
+                      {contactInfo.email}
                     </a>
                     .
                   </p>

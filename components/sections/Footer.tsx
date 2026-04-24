@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { siteContent } from "@/content/site";
 
-const { brand, footer } = siteContent;
+const { brand, footer, contact: contactInfo } = siteContent;
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -62,14 +62,19 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:info@ongroundpm.com.au"
+                href={`mailto:${contactInfo.email}`}
                 className="block font-sans text-sm text-white/50 hover:text-cream transition-colors"
               >
-                info@ongroundpm.com.au
+                {contactInfo.email}
               </a>
-              <p className="font-sans text-sm text-white/50">
-                [Phone — add number]
-              </p>
+              {contactInfo.phone && (
+                <a
+                  href={`tel:${contactInfo.phone.replace(/\s/g, "")}`}
+                  className="block font-sans text-sm text-white/50 hover:text-cream transition-colors"
+                >
+                  {contactInfo.phone}
+                </a>
+              )}
               <p className="font-sans text-xs text-white/30 mt-4 leading-relaxed">
                 Melbourne&rsquo;s West, VIC, Australia
               </p>
