@@ -113,7 +113,7 @@ export const siteContent = {
           "One round of revisions",
         ],
         pricing: "Fixed fee — quoted upfront",
-        turnaround: "72-hour turnaround",
+        turnaround: "Call us for urgent estimates",
         highlight: false,
       },
       {
@@ -151,7 +151,7 @@ export const siteContent = {
         highlight: false,
       },
     ],
-    technicalHeadline: "Technical Drafting & Documentation",
+    technicalHeadline: "Our Other Service Offerings",
     technicalBody: "Drafting, BIM, and site-data services — delivered to the same fixed-fee discipline.",
     technical: [
       {
@@ -421,10 +421,10 @@ export const siteContent = {
   // ----------------------------------------------------------
   serviceArea: {
     eyebrow: "Where We Work",
-    headline: "Serving Melbourne's West.",
-    body: "We're based in and focused on Melbourne's western growth corridor — one of the most active construction zones in Victoria. We know the local builders, the local subcontractors, and the local cost rates.",
+    headline: "Serving Melbourne.",
+    body: "We're based in Melbourne's west and work across greater Melbourne and Victoria. We know the local builders, the local subcontractors, and the local cost rates.",
     outsideNote:
-      "Working on a project outside these suburbs? Get in touch — if we can help, we will.",
+      "Working on a project outside Melbourne? Get in touch — if we can help, we will.",
     suburbs: [
       "Wyndham Vale",
       "Tarneit",
@@ -448,7 +448,7 @@ export const siteContent = {
     items: [
       {
         q: "How quickly can I get an estimate?",
-        a: "Our standard turnaround for a Quick Estimate is 72 hours from receipt of complete drawings and project information. For larger or more complex projects, we'll give you a specific timeline when we scope the work. We won't quote a turnaround we can't keep.",
+        a: "Turnaround depends on project size and complexity — we'll give you a specific timeline when we scope the work. If you have an urgent estimate, call us directly and we'll tell you what we can do.",
       },
       {
         q: "What do you charge?",
