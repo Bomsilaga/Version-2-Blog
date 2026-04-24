@@ -37,9 +37,9 @@ export default function Header() {
             <Image
               src={brand.logo}
               alt={brand.logoAlt}
-              width={140}
-              height={36}
-              className="h-8 w-auto object-contain"
+              width={200}
+              height={52}
+              className="h-12 w-auto object-contain"
               priority
               onError={(e) => {
                 // Fall back to text wordmark if logo not yet uploaded

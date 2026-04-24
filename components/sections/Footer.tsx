@@ -21,9 +21,9 @@ export default function Footer() {
               <Image
                 src={brand.logo}
                 alt={brand.logoAlt}
-                width={120}
-                height={32}
-                className="h-7 w-auto object-contain"
+                width={160}
+                height={44}
+                className="h-10 w-auto object-contain"
               />
             </a>
             <p className="font-sans text-sm text-white/50 mt-2 max-w-xs leading-relaxed">
