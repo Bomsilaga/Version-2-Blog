@@ -57,7 +57,7 @@ export const siteContent = {
       "MIEAust",
       "AIQS",
       "14+ years",
-      "Based in Melbourne's West",
+      "Based in Melbourne West",
     ],
   },
 
@@ -489,7 +489,7 @@ export const siteContent = {
     headline: "Let's talk about your project.",
     body: "Whether you need a quick estimate or you're looking for longer-term project support, the first step is a conversation. We'll come back to you within one business day.",
     email: "info@ongroundpm.com.au",
-    phone: "",
+    phone: "0491793268",
     responseNote:
       "We respond within one business day. For urgent enquiries, call directly. All information you share is kept confidential and used only to respond to your enquiry.",
     successHeadline: "Message received.",
