@@ -32,6 +32,7 @@ export const siteContent = {
       { label: "About", href: "#about" },
       { label: "FAQ", href: "#faq" },
       { label: "Contact", href: "#contact" },
+      { label: "Insights", href: "/blog" },
     ],
     cta: "Request a Quote",
     ctaHref: "#contact",
