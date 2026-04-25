@@ -54,19 +54,37 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    // Silently ignore honeypot submissions
     if (data.website) return;
 
     setSubmitting(true);
-    // Phase 2 will wire this to Supabase + Resend
-    console.log("Contact form submission:", data);
-
-    // Simulate async (remove when real handler is wired)
-    await new Promise((r) => setTimeout(r, 800));
-
-    setSubmitting(false);
-    setSubmitted(true);
-    reset();
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: contactInfo.web3formsKey,
+          subject: `New enquiry from ${data.name} — OnGroundPM`,
+          from_name: "OnGroundPM Website",
+          name: data.name,
+          email: data.email,
+          phone: data.phone || "Not provided",
+          suburb: data.suburb,
+          project_type: data.projectType,
+          message: data.message,
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+        reset();
+      } else {
+        alert("Something went wrong. Please email us directly at " + contactInfo.email);
+      }
+    } catch {
+      alert("Something went wrong. Please email us directly at " + contactInfo.email);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
